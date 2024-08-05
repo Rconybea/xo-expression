@@ -12,6 +12,7 @@ namespace xo {
     namespace ast {
         class Expression;
 
+        /** maybe rename to EnvPattern? or EnvShape? **/
         class Environment : public ref::Refcount {
         public:
             /** true if this is toplevel (global) environment.

@@ -85,7 +85,6 @@ namespace xo {
              *  @param env   stack of lexcically-enclosing lamnbda expressions,
              *               in nesting order, i.e. outermost first, innertmost last
              **/
-            //virtual std::int32_t find_free_vars(std::vector<ref::brw<Lambda>> env) = 0;
 
             /** write human-readable representation to stream **/
             virtual void display(std::ostream & os) const = 0;

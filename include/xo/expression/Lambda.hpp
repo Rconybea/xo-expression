@@ -40,7 +40,18 @@ namespace xo {
             const std::vector<ref::rp<Variable>> & argv() const { return local_env_->argv(); }
             const ref::rp<Expression> & body() const { return body_; }
 
-            bool needs_closure_flag() const { return !free_var_set_.empty(); }
+            const std::string & i_argname(uint32_t i) const {
+                return local_env_->i_argname(i);
+            }
+
+            /** true when this lambda requires a closure **/
+            bool needs_closure_flag() const {
+                return !free_var_set_.empty() || !captured_var_set_.empty();
+            }
+
+            bool is_captured(const std::string & argname) const {
+                return (captured_var_set_.find(argname) != captured_var_set_.end());
+            }
 
             // ----- FunctionInterface -----
 

@@ -12,6 +12,8 @@ namespace xo {
     namespace ast {
         class FunctionInterface : public Expression {
         public:
+            /** @param fn_type
+             **/
             FunctionInterface(exprtype extype, TypeDescr fn_type)
                 : Expression(extype, fn_type) {}
 

@@ -35,6 +35,10 @@ namespace xo {
             int n_arg() const { return argv_.size(); }
             TypeDescr fn_arg(uint32_t i) const { return argv_[i]->valuetype(); }
 
+            const std::string & i_argname(uint32_t i) const {
+                return argv_[i]->name();
+            }
+
             /** report binding path for a formal parameter.
              *  Returns sentinel if @p vname doesn't appear in @ref argv_
              **/
@@ -75,7 +79,7 @@ namespace xo {
                 : origin_{nullptr}, argv_(argv) {}
 
         private:
-            /** Lambnda for which this environment created.
+            /** Lambda for which this environment created.
              *
              *  Invariant:
              *  @code
